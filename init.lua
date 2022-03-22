@@ -20,7 +20,6 @@ require("miniature.autopair")
 require("miniature.indentline")
 require("miniature.bufremove")
 require("miniature.comment")
-require("miniature.cursorword")
 
 -- Other plugins
 require("miniature.alpha")

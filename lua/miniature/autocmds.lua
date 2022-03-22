@@ -5,11 +5,16 @@ vim.cmd [[
     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
-    autocmd FileType NvimTree
-      \ let b:ministatusline_disable = v:true |
-      \ let b:miniindentscope_disable = v:true |
-      \ let b:minicursorword_disable = v:true
-    autocmd FileType alpha
+    autocmd FileType NvimTree let b:ministatusline_disable = v:true
+    autocmd FileType NvimTree let b:miniindentscope_disable = v:true
+    autocmd FileType NvimTree let b:minicursorword_disable = v:true
+  augroup end
+
+  augroup _lazy_git
+    autocmd!
+    autocmd FileType lazygit let b:ministatusline_disable = v:true
+    autocmd FileType lazygit let b:miniindentscope_disable = v:true
+    autocmd FileType lazygit let b:minicursorword_disable = v:true
   augroup end
 
   augroup _git
