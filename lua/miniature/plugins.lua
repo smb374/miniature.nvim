@@ -89,6 +89,7 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
+  use "goolord/alpha-nvim"
   use "kyazdani42/nvim-tree.lua"
   use "folke/which-key.nvim"
   use "folke/trouble.nvim"
