@@ -33,6 +33,7 @@ require("miniature.nvim-tree")
 require("miniature.diag")
 require("miniature.telescope")
 require("miniature.toggleterm")
+require("miniature.project")
 
 -- which-key
 require("miniature.which-key")
