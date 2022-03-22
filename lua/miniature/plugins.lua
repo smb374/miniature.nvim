@@ -112,4 +112,6 @@ return packer.startup(function(use)
       vim.g.lazygit_floating_window_use_plenary = 1
     end
   }
+  -- Symbols
+  use "simrat39/symbols-outline.nvim"
 end)

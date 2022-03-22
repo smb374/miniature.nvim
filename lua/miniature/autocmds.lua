@@ -45,6 +45,19 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
+vim.api.nvim_create_augroup("_symbols_outline", {clear = true})
+vim.api.nvim_create_autocmd("FileType", {
+  desc = "symbols-outline mini.nvim setting",
+  pattern = "Outline",
+  group = "_symbols_outline",
+  callback = function ()
+    vim.b.ministatusline_disable = true
+    vim.b.miniindentscope_disable = true
+    vim.b.minicursorword_disable = true
+    vim.b.minitrailspace_disable = true
+  end
+})
+
 vim.api.nvim_create_augroup("_lsp_installer", {clear = true})
 vim.api.nvim_create_autocmd("FileType", {
   desc = "lsp-installer setting",

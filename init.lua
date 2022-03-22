@@ -34,6 +34,7 @@ require("miniature.diag")
 require("miniature.telescope")
 require("miniature.toggleterm")
 require("miniature.project")
+require("miniature.symbols-outline")
 
 -- which-key
 require("miniature.which-key")

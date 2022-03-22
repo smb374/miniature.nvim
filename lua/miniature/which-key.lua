@@ -99,6 +99,7 @@ local mappings = {
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   [","] = { "<cmd>lua require('mini.comment').toggle_lines(vim.fn.line('.'), vim.fn.line('.'))<cr>", "Toggle Comments" },
+  ["s"] = { "<cmd>SymbolsOutline<cr>", "Toggle Symbols Outline" },
 
   f = {
     name = "Find",
