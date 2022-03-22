@@ -5,16 +5,6 @@ vim.cmd [[
     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
-    autocmd FileType NvimTree let b:ministatusline_disable = v:true
-    autocmd FileType NvimTree let b:miniindentscope_disable = v:true
-    autocmd FileType NvimTree let b:minicursorword_disable = v:true
-  augroup end
-
-  augroup _lazy_git
-    autocmd!
-    autocmd FileType lazygit let b:ministatusline_disable = v:true
-    autocmd FileType lazygit let b:miniindentscope_disable = v:true
-    autocmd FileType lazygit let b:minicursorword_disable = v:true
   augroup end
 
   augroup _git
@@ -33,16 +23,6 @@ vim.cmd [[
     autocmd!
     autocmd VimResized * tabdo wincmd =
   augroup end
-
-  augroup _alpha
-    autocmd!
-    autocmd User AlphaReady set showtabline=0 |
-      \ let b:ministatusline_disable = v:true |
-      \ let b:miniindentscope_disable = v:true |
-      \ let b:minicursorword_disable = v:true |
-      \ let b:minitrailspace_disable = v:true
-    autocmd BufUnload <buffer> set showtabline=2 |
-  augroup end
 ]]
 
 -- Autoformat
@@ -50,3 +30,49 @@ vim.cmd [[
 --   autocmd!
 --   autocmd BufWritePre * lua vim.lsp.buf.formatting()
 -- augroup end
+
+-- Nvim 0.7.0+
+vim.api.nvim_create_augroup("_nvim_tree", {clear = true})
+vim.api.nvim_create_autocmd("FileType", {
+  desc = "nvim-tree mini.nvim setting",
+  pattern = "NvimTree",
+  group = "_nvim_tree",
+  callback = function ()
+    vim.b.ministatusline_disable = true
+    vim.b.miniindentscope_disable = true
+    vim.b.minicursorword_disable = true
+    vim.b.minitrailspace_disable = true
+  end
+})
+
+vim.api.nvim_create_augroup("_lsp_installer", {clear = true})
+vim.api.nvim_create_autocmd("FileType", {
+  desc = "lsp-installer setting",
+  pattern = "lsp-installer",
+  group = "_lsp_installer",
+  callback = function ()
+    vim.b.miniindentscope_disable = true
+    vim.b.minicursorword_disable = true
+    vim.b.minitrailspace_disable = true
+  end
+})
+
+vim.api.nvim_create_augroup("_alpha", {clear = true})
+vim.api.nvim_create_autocmd("User", {
+  desc = "alpha mini.nvim setting",
+  pattern = "AlphaReady",
+  group = "_alpha",
+  callback = function ()
+    vim.cmd([[set showtabline=0]])
+    vim.b.ministatusline_disable = true
+    vim.b.miniindentscope_disable = true
+    vim.b.minicursorword_disable = true
+    vim.b.minitrailspace_disable = true
+  end,
+})
+vim.api.nvim_create_autocmd("BufUnload", {
+  desc = "alpha out cmds",
+  pattern = "<buffer>",
+  group = "_alpha",
+  command = [[set showtabline=2]],
+})

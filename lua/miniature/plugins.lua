@@ -105,5 +105,11 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   -- LazyGit
-  use "kdheepak/lazygit.nvim"
+  use {
+    "kdheepak/lazygit.nvim",
+    config = function ()
+      vim.g.lazygit_floating_window_scaling_factor = 0.8
+      vim.g.lazygit_floating_window_use_plenary = 1
+    end
+  }
 end)

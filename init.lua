@@ -19,7 +19,9 @@ require("miniature.surround")
 require("miniature.autopair")
 require("miniature.indentline")
 require("miniature.bufremove")
+require("miniature.trailspace")
 require("miniature.comment")
+require("miniature.cursorword")
 
 -- Other plugins
 require("miniature.alpha")
