@@ -188,7 +188,10 @@ return packer.startup(function(use)
       require("miniature.diag")
     end
   }
-  use "antoinemadec/FixCursorHold.nvim"
+  use {
+    "antoinemadec/FixCursorHold.nvim",
+    event = "VimEnter",
+  }
   use {
     "norcalli/nvim-colorizer.lua",
     event = "BufRead",
