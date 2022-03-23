@@ -23,6 +23,36 @@ vim.cmd [[
     autocmd!
     autocmd VimResized * tabdo wincmd =
   augroup end
+
+  augroup _statusline
+    autocmd!
+    autocmd FileType NvimTree,Outline let b:ministatusline_disable = v:true
+    autocmd User AlphaReady,LazyGit let b:ministatusline_disable = v:true
+  augroup end
+
+  augroup _indentscope
+    autocmd!
+    autocmd FileType NvimTree,Outline,lsp-installer,lazygit let b:miniindentscope_disable = v:true
+    autocmd User AlphaReady,LazyGit let b:miniindentscope_disable = v:true
+  augroup end
+
+  augroup _cursorword
+    autocmd!
+    autocmd FileType NvimTree,Outline,lsp-installer,lazygit let b:minicursorword_disable = v:true
+    autocmd User AlphaReady,LazyGit let b:minicursorword_disable = v:true
+  augroup end
+
+  augroup _trailspace
+    autocmd!
+    autocmd FileType NvimTree,Outline,lsp-installer,lazygit let b:minitrailspace_disable = v:true
+    autocmd User AlphaReady,LazyGit let b:minitrailspace_disable = v:true
+  augroup end
+
+  augroup _alpha
+    autocmd!
+    autocmd User AlphaReady set showtabline=0
+    autocmd BufUnload <buffer> set showtabline=2
+  augroup end
 ]]
 
 -- Autoformat
@@ -30,62 +60,3 @@ vim.cmd [[
 --   autocmd!
 --   autocmd BufWritePre * lua vim.lsp.buf.formatting()
 -- augroup end
-
--- Nvim 0.7.0+
-vim.api.nvim_create_augroup("_nvim_tree", {clear = true})
-vim.api.nvim_create_autocmd("FileType", {
-  desc = "nvim-tree mini.nvim setting",
-  pattern = "NvimTree",
-  group = "_nvim_tree",
-  callback = function ()
-    vim.b.ministatusline_disable = true
-    vim.b.miniindentscope_disable = true
-    vim.b.minicursorword_disable = true
-    vim.b.minitrailspace_disable = true
-  end
-})
-
-vim.api.nvim_create_augroup("_symbols_outline", {clear = true})
-vim.api.nvim_create_autocmd("FileType", {
-  desc = "symbols-outline mini.nvim setting",
-  pattern = "Outline",
-  group = "_symbols_outline",
-  callback = function ()
-    vim.b.ministatusline_disable = true
-    vim.b.miniindentscope_disable = true
-    vim.b.minicursorword_disable = true
-    vim.b.minitrailspace_disable = true
-  end
-})
-
-vim.api.nvim_create_augroup("_lsp_installer", {clear = true})
-vim.api.nvim_create_autocmd("FileType", {
-  desc = "lsp-installer setting",
-  pattern = "lsp-installer",
-  group = "_lsp_installer",
-  callback = function ()
-    vim.b.miniindentscope_disable = true
-    vim.b.minicursorword_disable = true
-    vim.b.minitrailspace_disable = true
-  end
-})
-
-vim.api.nvim_create_augroup("_alpha", {clear = true})
-vim.api.nvim_create_autocmd("User", {
-  desc = "alpha mini.nvim setting",
-  pattern = "AlphaReady",
-  group = "_alpha",
-  callback = function ()
-    vim.cmd([[set showtabline=0]])
-    vim.b.ministatusline_disable = true
-    vim.b.miniindentscope_disable = true
-    vim.b.minicursorword_disable = true
-    vim.b.minitrailspace_disable = true
-  end,
-})
-vim.api.nvim_create_autocmd("BufUnload", {
-  desc = "alpha out cmds",
-  pattern = "<buffer>",
-  group = "_alpha",
-  command = [[set showtabline=2]],
-})
