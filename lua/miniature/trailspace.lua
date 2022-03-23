@@ -3,6 +3,4 @@ if not present then
   return
 end
 
-trail_space.setup({
-  only_in_normal_buffers = true,
-})
+trail_space.setup()
