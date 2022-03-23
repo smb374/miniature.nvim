@@ -1,4 +1,4 @@
-vim.cmd [[
+vim.cmd([[
   augroup _general_settings
     autocmd!
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
@@ -26,25 +26,25 @@ vim.cmd [[
 
   augroup _statusline
     autocmd!
-    autocmd FileType NvimTree,Outline let b:ministatusline_disable = v:true
+    autocmd FileType NvimTree,Outline,NeogitStatus let b:ministatusline_disable = v:true
     autocmd User AlphaReady let b:ministatusline_disable = v:true
   augroup end
 
   augroup _indentscope
     autocmd!
-    autocmd FileType NvimTree,Outline,lsp-installer,packer let b:miniindentscope_disable = v:true
+    autocmd FileType NvimTree,Outline,lsp-installer,packer,NeogitStatus let b:miniindentscope_disable = v:true
     autocmd User AlphaReady let b:miniindentscope_disable = v:true
   augroup end
 
   augroup _cursorword
     autocmd!
-    autocmd FileType NvimTree,Outline,lsp-installer,packer let b:minicursorword_disable = v:true
+    autocmd FileType NvimTree,Outline,lsp-installer,packer,NeogitStatus let b:minicursorword_disable = v:true
     autocmd User AlphaReady let b:minicursorword_disable = v:true
   augroup end
 
   augroup _trailspace
     autocmd!
-    autocmd FileType NvimTree,Outline,lsp-installer,packer let b:minitrailspace_disable = v:true
+    autocmd FileType NvimTree,Outline,lsp-installer,packer,NeogitStatus let b:minitrailspace_disable = v:true
     autocmd User AlphaReady let b:minitrailspace_disable = v:true
   augroup end
 
@@ -53,12 +53,12 @@ vim.cmd [[
     autocmd User AlphaReady set showtabline=0
     autocmd BufUnload <buffer> set showtabline=2
   augroup end
-]]
+]])
 
 -- Autoformat
-vim.cmd [[
+vim.cmd([[
   augroup _lsp
     autocmd!
     autocmd BufWritePre * lua vim.lsp.buf.formatting()
   augroup end
-]]
+]])
