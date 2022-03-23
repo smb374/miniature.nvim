@@ -3,6 +3,8 @@ if not status_ok then
   return
 end
 
+local mini_fuzzy_sorter = require("mini.fuzzy").get_telescope_sorter
+
 telescope.setup {
   defaults = {
     vimgrep_arguments = {
@@ -19,6 +21,8 @@ telescope.setup {
     path_display = { "smart" },
     entry_prefix = "  ",
     initial_mode = "insert",
+    generic_sorter = mini_fuzzy_sorter,
+    file_sorter = mini_fuzzy_sorter,
     layout_strategy = "horizontal",
     layout_config = {
       horizontal = {

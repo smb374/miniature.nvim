@@ -26,25 +26,25 @@ vim.cmd([[
 
   augroup _statusline
     autocmd!
-    autocmd FileType NvimTree,Outline,Neogit* let b:ministatusline_disable = v:true
+    autocmd FileType NvimTree,Outline,help,Neogit* let b:ministatusline_disable = v:true
     autocmd User AlphaReady let b:ministatusline_disable = v:true
   augroup end
 
   augroup _indentscope
     autocmd!
-    autocmd FileType NvimTree,Outline,lsp-installer,packer,Neogit* let b:miniindentscope_disable = v:true
+    autocmd FileType NvimTree,Outline,lsp-installer,packer,help,Neogit* let b:miniindentscope_disable = v:true
     autocmd User AlphaReady let b:miniindentscope_disable = v:true
   augroup end
 
   augroup _cursorword
     autocmd!
-    autocmd FileType NvimTree,Outline,lsp-installer,packer,Neogit* let b:minicursorword_disable = v:true
+    autocmd FileType NvimTree,Outline,lsp-installer,packer,help,Neogit* let b:minicursorword_disable = v:true
     autocmd User AlphaReady let b:minicursorword_disable = v:true
   augroup end
 
   augroup _trailspace
     autocmd!
-    autocmd FileType NvimTree,Outline,lsp-installer,packer,Neogit* let b:minitrailspace_disable = v:true
+    autocmd FileType NvimTree,Outline,lsp-installer,packer,help,Neogit* let b:minitrailspace_disable = v:true
     autocmd User AlphaReady let b:minitrailspace_disable = v:true
   augroup end
 

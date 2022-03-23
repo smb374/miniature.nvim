@@ -15,6 +15,7 @@ A neovim config build around [echasnovski/mini.nvim](https://github.com/echasnov
 - `mini.bufremove`
 - `mini.comment`
 - `mini.cursorword`
+- `mini.fuzzy`
 - `mini.indentscope`
 - `mini.pairs`
 - `mini.statusline`
