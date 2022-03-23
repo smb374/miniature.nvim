@@ -27,25 +27,26 @@ vim.cmd [[
   augroup _statusline
     autocmd!
     autocmd FileType NvimTree,Outline let b:ministatusline_disable = v:true
-    autocmd User AlphaReady,LazyGit let b:ministatusline_disable = v:true
+    autocmd User AlphaReady let b:ministatusline_disable = v:true
+    " autocmd BufUnload <buffer> let g:ministatusline_disable = v:false
   augroup end
 
   augroup _indentscope
     autocmd!
-    autocmd FileType NvimTree,Outline,lsp-installer,lazygit let b:miniindentscope_disable = v:true
-    autocmd User AlphaReady,LazyGit let b:miniindentscope_disable = v:true
+    autocmd FileType NvimTree,Outline,lsp-installer,packer let b:miniindentscope_disable = v:true
+    autocmd User AlphaReady let b:miniindentscope_disable = v:true
   augroup end
 
   augroup _cursorword
     autocmd!
-    autocmd FileType NvimTree,Outline,lsp-installer,lazygit let b:minicursorword_disable = v:true
-    autocmd User AlphaReady,LazyGit let b:minicursorword_disable = v:true
+    autocmd FileType NvimTree,Outline,lsp-installer,packer let b:minicursorword_disable = v:true
+    autocmd User AlphaReady let b:minicursorword_disable = v:true
   augroup end
 
   augroup _trailspace
     autocmd!
-    autocmd FileType NvimTree,Outline,lsp-installer,lazygit let b:minitrailspace_disable = v:true
-    autocmd User AlphaReady,LazyGit let b:minitrailspace_disable = v:true
+    autocmd FileType NvimTree,Outline,lsp-installer,packer let b:minitrailspace_disable = v:true
+    autocmd User AlphaReady let b:minitrailspace_disable = v:true
   augroup end
 
   augroup _alpha

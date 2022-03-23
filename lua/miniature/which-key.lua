@@ -129,7 +129,7 @@ local mappings = {
 
   g = {
     name = "Git",
-    g = { "<cmd>lua require'lazygit'.lazygit(); vim.cmd[[doautocmd User LazyGit]]<cr>", "Lazygit" },
+    g = { "<cmd>lua require('neogit').open({ kind = 'vsplit' })<cr>", "Open Neogit" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },

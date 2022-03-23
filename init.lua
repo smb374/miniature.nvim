@@ -35,6 +35,7 @@ require("miniature.telescope")
 require("miniature.toggleterm")
 require("miniature.project")
 require("miniature.symbols-outline")
+require("miniature.neogit")
 
 -- which-key
 require("miniature.which-key")

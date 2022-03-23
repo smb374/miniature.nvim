@@ -104,14 +104,8 @@ return packer.startup(function(use)
   use "ahmedkhalf/project.nvim"
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  -- LazyGit
-  use {
-    "kdheepak/lazygit.nvim",
-    config = function ()
-      vim.g.lazygit_floating_window_scaling_factor = 0.8
-      vim.g.lazygit_floating_window_use_plenary = 1
-    end
-  }
+  -- neogit
+  use "TimUntersberger/neogit"
   -- Symbols
   use "simrat39/symbols-outline.nvim"
 end)
