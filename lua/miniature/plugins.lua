@@ -149,7 +149,7 @@ return packer.startup(function(use)
   -- TS
   use {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufRead", "BufNewFile" },
+    event = "VimEnter",
     run = ":TSUpdate",
     config = function()
       require("miniature.treesitter")
