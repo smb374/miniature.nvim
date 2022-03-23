@@ -82,7 +82,7 @@ local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   b = {
     name = "Buffer",
-    d = { [[<cmd>lua require("mini.bufremove").delete()]], "Close buffer" },
+    d = { [[<cmd>lua require("mini.bufremove").delete()<cr>]], "Close buffer" },
     n = { "<cmd>bnext<cr>", "Next Buffer" },
     p = { "<cmd>bprevious<cr>", "Previous Buffer" },
   },
