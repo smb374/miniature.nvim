@@ -28,7 +28,6 @@ vim.cmd [[
     autocmd!
     autocmd FileType NvimTree,Outline let b:ministatusline_disable = v:true
     autocmd User AlphaReady let b:ministatusline_disable = v:true
-    " autocmd BufUnload <buffer> let g:ministatusline_disable = v:false
   augroup end
 
   augroup _indentscope
@@ -57,7 +56,9 @@ vim.cmd [[
 ]]
 
 -- Autoformat
--- augroup _lsp
---   autocmd!
---   autocmd BufWritePre * lua vim.lsp.buf.formatting()
--- augroup end
+vim.cmd [[
+  augroup _lsp
+    autocmd!
+    autocmd BufWritePre * lua vim.lsp.buf.formatting()
+  augroup end
+]]
