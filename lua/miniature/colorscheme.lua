@@ -3,32 +3,27 @@ if not present then
 	return
 end
 
-local theme_name = vim.g.miniature_color or "default-dark"
-
-local theme_present, theme = pcall(require, string.format("colors.%s", theme_name))
-if not theme_present then
-	theme = require("colors.default-dark")
-end
+local theme = {
+	base00 = "#1b1c27",
+	base01 = "#303146",
+	base02 = "#444764",
+	base03 = "#595c82",
+	base04 = "#70749e",
+	base05 = "#8f92b3",
+	base06 = "#adafc7",
+	base07 = "#cbcddc",
+	base08 = "#f7768e",
+	base09 = "#ff9e64",
+	base0A = "#e0af68",
+	base0B = "#9ece6a",
+	base0C = "#2ac3de",
+	base0D = "#7aa2f7",
+	base0E = "#9d7cd8",
+	base0F = "#f55673",
+}
 
 base16.setup({
-	palette = {
-		base00 = "#1b1c27",
-		base01 = "#303146",
-		base02 = "#444764",
-		base03 = "#595c82",
-		base04 = "#70749e",
-		base05 = "#8f92b3",
-		base06 = "#adafc7",
-		base07 = "#cbcddc",
-		base08 = "#f7768e",
-		base09 = "#ff9e64",
-		base0A = "#e0af68",
-		base0B = "#9ece6a",
-		base0C = "#2ac3de",
-		base0D = "#7aa2f7",
-		base0E = "#9d7cd8",
-		base0F = "#f55673",
-	},
+	palette = theme,
 })
 
 local highlight = function(group, args)
@@ -52,25 +47,6 @@ vim.cmd([[
   hi Keyword  gui=italic
   hi Comment  gui=italic
 ]])
-
---[[
-" gray
-highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
-" blue
-highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
-highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
-" light blue
-highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
-highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
-highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
-" pink
-highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
-highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
-" front
-highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
-highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
-highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
---]]
 
 highlight("CmpDocumentation", { fg = theme.base05, bg = theme.base00 })
 highlight("CmpDocumentationBorder", { fg = theme.base0D, bg = theme.base00 })
