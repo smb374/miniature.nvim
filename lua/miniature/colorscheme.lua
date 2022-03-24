@@ -9,22 +9,22 @@ end
 -- has the same format as below.
 local theme = {}
 
-theme.base00 = "#1b1c27"
-theme.base01 = "#303146"
-theme.base02 = "#444764"
-theme.base03 = "#595c82"
-theme.base04 = "#70749e"
-theme.base05 = "#8f92b3"
-theme.base06 = "#adafc7"
-theme.base07 = "#cbcddc"
-theme.base08 = "#f7768e"
-theme.base09 = "#ff9e64"
-theme.base0A = "#e0af68"
-theme.base0B = "#9ece6a"
-theme.base0C = "#2ac3de"
-theme.base0D = "#7aa2f7"
-theme.base0E = "#9d7cd8"
-theme.base0F = "#f55673"
+theme.base00 = "#181f21"
+theme.base01 = "#2d3a3e"
+theme.base02 = "#42565c"
+theme.base03 = "#587279"
+theme.base04 = "#6e8d96"
+theme.base05 = "#8ca5ab"
+theme.base06 = "#a9bcc1"
+theme.base07 = "#c7d3d6"
+theme.base08 = "#e06e6e"
+theme.base09 = "#e19d5c"
+theme.base0A = "#e0ba63"
+theme.base0B = "#8ccf7e"
+theme.base0C = "#95ccf5"
+theme.base0D = "#77aed7"
+theme.base0E = "#c47fd5"
+theme.base0F = "#ef7d7d"
 
 base16.setup({
 	palette = theme,
