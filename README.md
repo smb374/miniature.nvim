@@ -1,14 +1,15 @@
-# miniature.nvim
-
 <div align="center">
 
-  ![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.6.0+-blueviolet.svg?style=for-the-badge&logo=Neovim)
-  ![GitHub top language](https://img.shields.io/github/languages/top/smb374/miniature.nvim?logo=Lua&style=for-the-badge)
-  ![GitHub repo size](https://img.shields.io/github/repo-size/smb374/miniature.nvim?logo=GitHub&style=for-the-badge)
-  
-</div>
+# miniature.nvim
 
 A small neovim config build around [echasnovski/mini.nvim](https://github.com/echasnovski/mini.nvim)
+  
+![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.6.0+-blueviolet.svg?style=for-the-badge&logo=Neovim)
+![GitHub top language](https://img.shields.io/github/languages/top/smb374/miniature.nvim?logo=Lua&style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/smb374/miniature.nvim?logo=GitHub&style=for-the-badge)
+
+</div>
+
 
 ## `mini.nvim` modules used
 
