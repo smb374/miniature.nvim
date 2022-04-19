@@ -28,6 +28,7 @@ vim.cmd([[
     autocmd!
     autocmd FileType NvimTree,Outline,help,Neogit* let b:ministatusline_disable = v:true
     autocmd User AlphaReady let b:ministatusline_disable = v:true
+    autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
   augroup end
 
   augroup _indentscope

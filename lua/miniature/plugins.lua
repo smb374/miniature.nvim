@@ -145,6 +145,13 @@ return packer.startup(function(use)
       require("lsp-colors").setup()
     end
   }
+  use {
+    "ray-x/lsp_signature.nvim",
+    after = "nvim-lspconfig",
+    config = function ()
+      require("miniature.lsp.signature")
+    end
+  }
 
   -- TS
   use {
