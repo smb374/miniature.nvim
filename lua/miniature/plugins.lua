@@ -47,6 +47,7 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"
   use "lewis6991/impatient.nvim"
   use "echasnovski/mini.nvim"
+  use "gpanders/editorconfig.nvim"
   -- rest
   use {
     "nvim-lua/popup.nvim",
@@ -60,15 +61,15 @@ return packer.startup(function(use)
   use {
     "lewis6991/gitsigns.nvim",
     event = "BufRead",
-    config = function ()
+    config = function()
       require("miniature.gitsigns")
     end
   }
   use {
     "kyazdani42/nvim-web-devicons",
     module = "nvim-web-devicons",
-    config = function ()
-      require("nvim-web-devicons").setup({default = true})
+    config = function()
+      require("nvim-web-devicons").setup({ default = true })
     end
   }
 
@@ -76,7 +77,7 @@ return packer.startup(function(use)
   use {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
-    config = function ()
+    config = function()
       require("miniature.cmp")
     end
   }
@@ -141,14 +142,14 @@ return packer.startup(function(use)
   use {
     "folke/lsp-colors.nvim",
     after = "nvim-lspconfig",
-    config = function ()
+    config = function()
       require("lsp-colors").setup()
     end
   }
   use {
     "ray-x/lsp_signature.nvim",
     after = "nvim-lspconfig",
-    config = function ()
+    config = function()
       require("miniature.lsp.signature")
     end
   }
@@ -170,28 +171,28 @@ return packer.startup(function(use)
   use {
     "goolord/alpha-nvim",
     event = "VimEnter",
-    config = function ()
+    config = function()
       require("miniature.alpha")
     end
   }
   use {
     "kyazdani42/nvim-tree.lua",
     cmd = "NvimTreeToggle",
-    config = function ()
+    config = function()
       require("miniature.nvim-tree")
     end
   }
   use {
     "folke/which-key.nvim",
     event = "VimEnter",
-    config = function ()
+    config = function()
       require("miniature.which-key")
     end
   }
   use {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
-    config = function ()
+    config = function()
       require("miniature.diag")
     end
   }
@@ -202,7 +203,7 @@ return packer.startup(function(use)
   use {
     "norcalli/nvim-colorizer.lua",
     event = "BufRead",
-    config = function ()
+    config = function()
       require("colorizer").setup()
     end
   }
@@ -210,14 +211,14 @@ return packer.startup(function(use)
     "akinsho/toggleterm.nvim",
     cmd = "ToggleTerm",
     module = "toggleterm.terminal",
-    config = function ()
+    config = function()
       require("miniature.toggleterm")
     end
   }
   use {
     "ahmedkhalf/project.nvim",
     event = "VimEnter",
-    config = function ()
+    config = function()
       require("miniature.project")
     end
   }
@@ -233,7 +234,7 @@ return packer.startup(function(use)
   use {
     "TimUntersberger/neogit",
     module = "neogit",
-    config = function ()
+    config = function()
       require("miniature.neogit")
     end
   }
@@ -241,8 +242,13 @@ return packer.startup(function(use)
   use {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
-    config = function ()
+    config = function()
       require("miniature.symbols-outline")
     end
+  }
+  -- eww yuck syntax
+  use {
+    "elkowar/yuck.vim",
+    ft = { "yuck" },
   }
 end)
