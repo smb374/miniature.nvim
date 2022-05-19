@@ -100,6 +100,7 @@ local mappings = {
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   [","] = { "<cmd>lua require('mini.comment').toggle_lines(vim.fn.line('.'), vim.fn.line('.'))<cr>", "Toggle Comments" },
   ["s"] = { "<cmd>SymbolsOutline<cr>", "Toggle Symbols Outline" },
+  ["k"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Show lsp doc under cursor" },
 
   f = {
     name = "Find",

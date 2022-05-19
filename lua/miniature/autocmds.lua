@@ -56,3 +56,27 @@ vim.cmd([[
     autocmd BufUnload <buffer> set showtabline=2
   augroup end
 ]])
+
+-- -- Nvim 0.7.0+
+-- local hold_action = vim.api.nvim_create_augroup("HoldAction", {})
+-- local hover_showed = false
+-- vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+--   group = hold_action,
+--   pattern = "*",
+--   desc = "Show hover doc when CursorHold",
+--   callback = function()
+--     if not hover_showed then
+--       vim.lsp.buf.hover()
+--       hover_showed = true
+--     end
+--   end
+-- })
+-- vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+--   group = hold_action,
+--   pattern = "*",
+--   callback = function()
+--     if hover_showed then
+--       hover_showed = false
+--     end
+--   end
+-- })

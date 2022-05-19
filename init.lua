@@ -20,3 +20,7 @@ require("miniature.bufremove")
 require("miniature.trailspace")
 require("miniature.comment")
 require("miniature.cursorword")
+
+-- early loading plugins
+require("miniature.lsp.nlspsettings")
+require("miniature.treesitter")

@@ -131,10 +131,7 @@ return packer.startup(function(use)
     module = "nvim-lsp-installer",
     cmd = { "LspInstall", "LspInstallInfo" },
   }
-  use {
-    "tamago324/nlsp-settings.nvim",
-    after = "nvim-lspconfig",
-  }
+  use "tamago324/nlsp-settings.nvim" -- Need early load
   use {
     "jose-elias-alvarez/null-ls.nvim",
     after = "nvim-lspconfig",
@@ -157,15 +154,14 @@ return packer.startup(function(use)
   -- TS
   use {
     "nvim-treesitter/nvim-treesitter",
-    event = "VimEnter",
-    run = ":TSUpdate",
-    config = function()
-      require("miniature.treesitter")
-    end
+    run = ":TSUpdate"
   }
   use {
     "JoosepAlviste/nvim-ts-context-commentstring",
     after = "nvim-treesitter",
+  }
+  use {
+    "nvim-treesitter/playground",
   }
 
   use {
