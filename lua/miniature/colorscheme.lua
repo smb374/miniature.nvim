@@ -1,6 +1,6 @@
 local present, base16 = pcall(require, "mini.base16")
 if not present then
-	return
+  return
 end
 
 -- You should define your own base16 colorscheme here
@@ -9,37 +9,37 @@ end
 -- has the same format as below.
 local theme = {}
 
-theme.base00 = "#181f21"
-theme.base01 = "#2d3a3e"
-theme.base02 = "#42565c"
-theme.base03 = "#587279"
-theme.base04 = "#6e8d96"
-theme.base05 = "#8ca5ab"
-theme.base06 = "#a9bcc1"
-theme.base07 = "#c7d3d6"
-theme.base08 = "#e06e6e"
-theme.base09 = "#e19d5c"
-theme.base0A = "#e0ba63"
-theme.base0B = "#8ccf7e"
-theme.base0C = "#95ccf5"
-theme.base0D = "#77aed7"
-theme.base0E = "#c47fd5"
-theme.base0F = "#ef7d7d"
+theme.base00 = "#2E3440"
+theme.base01 = "#3B4252"
+theme.base02 = "#434C5E"
+theme.base03 = "#4C566A"
+theme.base04 = "#D8DEE9"
+theme.base05 = "#E5E9F0"
+theme.base06 = "#ECEFF4"
+theme.base07 = "#8FBCBB"
+theme.base08 = "#BF616A"
+theme.base09 = "#D08770"
+theme.base0A = "#EBCB8B"
+theme.base0B = "#A3BE8C"
+theme.base0C = "#88C0D0"
+theme.base0D = "#81A1C1"
+theme.base0E = "#B48EAD"
+theme.base0F = "#5E81AC"
 
 base16.setup({
-	palette = theme,
+  palette = theme,
 })
 
 local highlight = function(group, args)
-	local command = string.format(
-		[[highlight %s guifg=%s guibg=%s gui=%s guisp=%s]],
-		group,
-		args.fg or "NONE",
-		args.bg or "NONE",
-		args.attr or "NONE",
-		args.sp or "NONE"
+  local command = string.format(
+    [[highlight %s guifg=%s guibg=%s gui=%s guisp=%s]],
+    group,
+    args.fg or "NONE",
+    args.bg or "NONE",
+    args.attr or "NONE",
+    args.sp or "NONE"
   )
-	vim.cmd(command)
+  vim.cmd(command)
 end
 
 -- Italics

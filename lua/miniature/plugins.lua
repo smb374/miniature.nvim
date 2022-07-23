@@ -48,6 +48,10 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   use "echasnovski/mini.nvim"
   use "gpanders/editorconfig.nvim"
+  use {
+    "eraserhd/parinfer-rust",
+    run = "cargo build --release"
+  }
   -- rest
   use {
     "nvim-lua/popup.nvim",
@@ -131,6 +135,7 @@ return packer.startup(function(use)
     module = "nvim-lsp-installer",
     cmd = { "LspInstall", "LspInstallInfo" },
   }
+  use "lukas-reineke/lsp-format.nvim"
   use "tamago324/nlsp-settings.nvim" -- Need early load
   use {
     "jose-elias-alvarez/null-ls.nvim",

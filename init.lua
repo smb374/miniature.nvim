@@ -1,3 +1,5 @@
+vim.api.nvim_set_keymap("i", "<Tab>", "<Tab>", { noremap = true, silent = true })
+
 -- Options & Keymaps
 require("miniature.options")
 require("miniature.keymaps")
